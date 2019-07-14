@@ -3,7 +3,7 @@
 @task('deploy', ['on' => ['web'], 'parallel' => true])
 cd /www/wwwroot/erga
 {{--git pull origin {{ $branch }}--}}
-{{--git reset --hard--}}
+git reset --hard
 git pull origin master
 composer install --no-dev
 {{--php artisan migrate --force--}}
