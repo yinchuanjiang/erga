@@ -15,11 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('nickname',30)->comment('昵称')->nullable();
+            $table->string('openid',191)->unique()->comment('openid');
+            $table->string('avatar',191)->comment('头像')->nullable();
+            $table->string('real_name',30)->comment('真实姓名')->nullable();
+            $table->string('mobile',11)->comment('手机号')->nullable();
+            $table->string('address',100)->comment('地址')->nullable();
             $table->timestamps();
         });
     }
