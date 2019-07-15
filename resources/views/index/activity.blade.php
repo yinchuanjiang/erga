@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
     <audio src="./images/bgmusic.mp3" id="au"></audio>
-    <img src="./images/music_off.png" id="music"/>
+    {{--<img src="./images/music_off.png" id="music"/>--}}
     <div class="swiper-container" style="overflow: auto">
         <div class="swiper-wrapper" style="height: auto">
             <div class="swiper-slide">
@@ -177,21 +177,7 @@
                         $(that).parents('.swiper-slide').find('.bg').show();
                         $(that).parents('.swiper-slide').find('.verse').show();
                         $(that).parents('.swiper-slide').find('.close').show();
-                    }
-                }).catch(error => {
-                    $.hideLoading();
-                    $.each(error.response.data.errors, function (idx, obj) {
-                        $.toast(obj[0], "forbidden");
-                        return false;
-                    });
-                })
-            });
-
-            //关闭诗句 判断是否需要抽奖
-            $('.close').click(function () {
-                axios.get('/prize').then(res => {
-                    $.hideLoading();
-                    if (res.data.status == 200) {
+                    }else if (res.data.status == 300) {
                         $('.prize_' + res.data.data.prize).show().siblings('.prize').hide();
                         $('.prize-dialog').show();
                     }
@@ -202,7 +188,8 @@
                         return false;
                     });
                 })
-            })
+            });
+
             //一二等奖 信息dialog
             $('.prize_1,.prize_2').click(function () {
                 $('.info-dialog').show();

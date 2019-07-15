@@ -31,27 +31,13 @@ class IndexController extends Controller
             'type' => request('type'),
         ];
         UserLuck::updateOrCreate($data);
-        return show(200,'记录成功');
-    }
-    //
-    public function prize()
-    {
-        //触发抽奖
-        if(UserLuck::where('user_id',auth()->id())->count() == 8){
-            if(auth()->user()->prize)
-                return show(200,'触发抽奖',['prize' => auth()->user()->prize]);
-            $random = rand(1,300000);
-            if($random % 30000 == 0){
-                $prize = 1;
-            }else if($random % 150 == 0){
-                $prize = 2;
-            }else{
-                $prize = 3;
-            }
-            $prize = 3;
-            auth()->user()->prize = $prize;
-            auth()->user()->save();
-            return show(200,'触发抽奖',['prize' => $prize]);
+        if(request('type') == 8){
+            return show(300,'中奖了',['prize' => 3]);
         }
+        $random = rand(1,90);
+        if($random % 10 == 0){
+            return show(300,'中奖了',['prize' => 3]);
+        }
+        return show(200,'记录成功');
     }
 }
