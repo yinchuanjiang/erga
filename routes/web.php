@@ -24,7 +24,7 @@ if (! function_exists('show')) {
     }
 }
 Route::get('/auth', 'AuthController@auth')->name('login');
-Route::get('/home', 'AuthController@index')->name('home');
+Route::get('/home', 'AuthController@authUser')->name('home');
 Route::get('/', 'IndexController@index')->name('index');
 Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/activity', 'IndexController@activity')->name('activity');
