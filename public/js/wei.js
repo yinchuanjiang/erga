@@ -1,9 +1,19 @@
 window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('au');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
 	//抓到音乐图片
 	var music = document.getElementById("music");
 	var au = document.getElementById("au");
-    au.play();
 	var play=1;
+    au.play();
 	
 	//绑定单击事件
 	music.onclick = function(){
