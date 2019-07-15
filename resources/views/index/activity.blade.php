@@ -165,7 +165,7 @@
             $('.box .luck').click(function () {
                 var type = swiper.activeIndex + 1;
                 var that = this;
-                axios.get('/luck', {type}).then(res => {
+                axios.get('/luck?type='+type).then(res => {
                     $.hideLoading();
                     if (res.data.status == 200) {
                         $(that).parents('.swiper-slide').find('.container-alter').css('display','flex');

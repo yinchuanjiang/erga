@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 
 class BaseController extends Controller
@@ -19,7 +20,7 @@ class BaseController extends Controller
         view()->composer('layout.main',function ($view) use ($signPackage){
             $view->with('signPackage',$signPackage);
         });
-        //Auth::guard('web')->loginUsingId(2);
+        Auth::guard('web')->loginUsingId(1);
     }
 
 
