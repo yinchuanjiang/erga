@@ -49,13 +49,13 @@
         var t_img; // 定时器
         var isLoad = true; // 控制变量
 
-// 判断图片加载状况，加载完成后回调
+        // 判断图片加载状况，加载完成后回调
         isImgLoad(function () {
             $("#loading").fadeOut(1000)
             $('.swiper-container').fadeIn(1000)
         });
 
-// 判断图片加载的函数
+        // 判断图片加载的函数
         function isImgLoad(callback) {
             // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
             // 查找所有封面图，迭代处理

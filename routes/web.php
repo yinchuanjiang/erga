@@ -23,12 +23,13 @@ if (! function_exists('show')) {
         return new \Illuminate\Http\JsonResponse(compact('status','msg','data'));
     }
 }
-Route::get('/auth', 'AuthController@auth')->name('login');
-Route::get('/home', 'AuthController@authUser')->name('home');
-Route::get('/', 'IndexController@index')->name('index');
+//Route::get('/auth', 'AuthController@auth')->name('login');
+Route::get('/home', 'AuthController@authUser')->name('login');
 Route::group(['middleware' => 'auth:web'], function () {
+    Route::get('/', 'IndexController@index')->name('index');
     Route::get('/activity', 'IndexController@activity')->name('activity');
     Route::get('/luck', 'IndexController@luck')->name('luck');
+    Route::get('/prize', 'IndexController@prize')->name('prize');
     Route::post('/submit', 'IndexController@submit')->name('submit');
 });
 Route::get('/rule', function () {

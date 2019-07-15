@@ -172,8 +172,21 @@
                         $(that).parents('.swiper-slide').find('.bg').show();
                         $(that).parents('.swiper-slide').find('.verse').show();
                         $(that).parents('.swiper-slide').find('.close').show();
-                    } else if (res.data.status == 300) {
-                        console.log(res.data.data.prize)
+                    }
+                }).catch(error => {
+                    $.hideLoading();
+                    $.each(error.response.data.errors, function (idx, obj) {
+                        $.toast(obj[0], "forbidden");
+                        return false;
+                    });
+                })
+            });
+
+            //关闭诗句 判断是否需要抽奖
+            $('.close').click(function () {
+                axios.get('/prize').then(res => {
+                    $.hideLoading();
+                    if (res.data.status == 200) {
                         $('.prize_' + res.data.data.prize).show().siblings('.prize').hide();
                         $('.prize-dialog').show();
                     }
@@ -184,7 +197,7 @@
                         return false;
                     });
                 })
-            });
+            })
             //一二等奖 信息dialog
             $('.prize_1,.prize_2').click(function () {
                 $('.info-dialog').show();
