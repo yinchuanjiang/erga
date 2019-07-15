@@ -19,8 +19,8 @@
         align-items: center;
     }
 </style>
-<div class="swiper-container">
-    <div class="swiper-wrapper">
+<div class="swiper-container" style="overflow:auto;">
+    <div class="swiper-wrapper" style="height: auto">
         <div class="swiper-slide">
             <div class="container">
                 <img src="./images/loading.gif" alt="" style="width: 100%" class="loding">

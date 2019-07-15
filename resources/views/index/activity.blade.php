@@ -2,9 +2,14 @@
 @section('content')
     <audio src="./images/bgmusic.mp3" id="au"></audio>
     <img src="./images/music_off.png" id="music"/>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
+    <div class="swiper-container" style="overflow: auto">
+        <div class="swiper-wrapper" style="height: auto">
             <div class="swiper-slide">
+                @if(!auth()->user()->lucks)
+                    <div class="first" style="background-color: black;opacity: 0.7;width: 100%;height: 100%;position: absolute;z-index: 9">
+                        <img src="./images/left-right.png" alt="" style="width: 100%;">
+                    </div>
+                @endif
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/40.gif" alt="" class="main">
@@ -240,6 +245,9 @@
             //关闭中奖dialog
             $('.prize-dialog').click(function () {
                 $('.pirze').hide();
+                $(this).hide();
+            })
+            $('.first').click(function () {
                 $(this).hide();
             })
         })
