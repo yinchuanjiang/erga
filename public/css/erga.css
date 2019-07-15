@@ -16,9 +16,9 @@ body {
     height: 100%;
 }
 #music{
-    float: right;
     position: fixed;
     right: 3px;
+    top: 69px;
     z-index: 99;
     animation: music_run 2s infinite linear;
 }
@@ -78,4 +78,10 @@ body {
     position: relative;
     margin-top: 10px;
     z-index: 9;
+}
+.prize-div{
+    position: relative;
+    display: flex !important;
+    justify-content:center;
+    align-items:center;
 }

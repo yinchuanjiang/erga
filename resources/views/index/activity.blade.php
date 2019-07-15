@@ -125,10 +125,10 @@
         </div>
     </div>
     <div class="prize-dialog" style="display: none">
-        <div class="weui-mask weui-mask--visible">
-            <img src="./images/prize_1.png" alt="" class="prize_1 prize" style="width: 70%;margin: 20% 15%;display: none">
-            <img src="./images/prize_2.png" alt="" class="prize_2 prize" style="width: 70%;margin: 20% 15%;display: none">
-            <img src="./images/prize_3.png" alt="" class="prize_3 prize" style="width: 70%;margin: 20% 15%;display: none">
+        <div class="weui-mask weui-mask--visible prize-div">
+            <img src="./images/prize_1.png" alt="" class="prize_1 prize" style="width: 70%;display: none">
+            <img src="./images/prize_2.png" alt="" class="prize_2 prize" style="width: 70%;display: none">
+            <img src="./images/prize_3.png" alt="" class="prize_3 prize" style="width: 70%;display: none">
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
@@ -153,8 +153,8 @@
             }
         });
         $(function () {
-            var top = $('.box').offset().top;
-            $('#music').css('top', top + 'px');
+            $("#loading").fadeOut(1000)
+            $('.swiper-wrapper').fadeIn(1000)
 //            $('.luck').click(function () {
 //                $(this).parents('.swiper-slide').find('.container-alter').show();
 //            })
@@ -165,10 +165,10 @@
             $('.box .luck').click(function () {
                 var type = swiper.activeIndex + 1;
                 var that = this;
-                axios.get('/luck?type='+type).then(res => {
+                axios.get('/luck?type=' + type).then(res => {
                     $.hideLoading();
                     if (res.data.status == 200) {
-                        $(that).parents('.swiper-slide').find('.container-alter').css('display','flex');
+                        $(that).parents('.swiper-slide').find('.container-alter').css('display', 'flex');
                         $(that).parents('.swiper-slide').find('.bg').show();
                         $(that).parents('.swiper-slide').find('.verse').show();
                         $(that).parents('.swiper-slide').find('.close').show();

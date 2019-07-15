@@ -9,15 +9,27 @@
     <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
 </head>
 <body>
-<div id="loading">
-    <img src="./images/loading.gif" alt="" style="width: 100%">
-</div>
-<div class="swiper-container" style="display: none">
+<style>
+    .swiper-container .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="./images/zhuye.png" alt="" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" style="width: 100%">
-            <a href="/activity"><img src="./images/begain.png" alt="" style="width: 32%;position: absolute;top: 55%;left: 34%"></a>
-            <span style="position: absolute;text-align: center;top:61%;width: 100%;font-size: 12px;text-decoration: underline"><a href="/rule" style="color: #EFB0B0;">规则说明</a></span>
+            <div class="container">
+                <img src="./images/loading.gif" alt="" style="width: 100%" class="loding">
+                <div class="start" style="display: none">
+                    <img src="./images/zhuye.png" alt="" style="width: 100%">
+                    <a href="/activity"><img src="./images/begain.png" alt="" style="width: 32%;position: absolute;top: 53%;left: 34%"></a>
+                    <span style="position: absolute;text-align: center;top:58%;width: 100%;font-size: 12px;text-decoration: underline"><a href="/rule" style="color: #EFB0B0;">规则说明</a></span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -41,6 +53,7 @@
     <img src="./images/fudai.gif" alt="" class="cover">
     <img src="./images/close.png" alt="" class="cover">
     <img src="./images/music_off.png" alt="" class="cover">
+    <audio src="./images/bgmusic.mp3"></audio>
 </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
@@ -51,8 +64,8 @@
 
         // 判断图片加载状况，加载完成后回调
         isImgLoad(function () {
-            $("#loading").fadeOut(1000)
-            $('.swiper-container').fadeIn(1000)
+            $('.start').fadeIn(500)
+            $(".loding").fadeOut(500)
         });
 
         // 判断图片加载的函数

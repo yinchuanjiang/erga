@@ -2,7 +2,7 @@ window.onload = function () {
 	//抓到音乐图片
 	var music = document.getElementById("music");
 	var au = document.getElementById("au");
-    // au.play();
+    au.play();
 	var play=1;
 	
 	//绑定单击事件

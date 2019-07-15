@@ -25,7 +25,7 @@
 <div id="loading">
     <img src="./images/loading.gif" alt="" style="width: 100%">
 </div>
-<div class="swiper-container" style="display: none;overflow-x:hidden;overflow-y: scroll">
+<div class="swiper-container" style="display: none;overflow-x:hidden;overflow-y: scroll;background-color: white">
     <div class="swiper-wrapper">
         <div class="swiper-slide" style="padding: 1rem">
             <h3>活动规则:</h3>
@@ -152,9 +152,9 @@
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
 <script type="text/javascript">
-    setTimeout(function () {
+    $(function () {
         $("#loading").fadeOut(500)
         $('.swiper-container').fadeIn(500)
-    }, 1000)
+    })
 </script>
 </html>
