@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\UserLuck;
-use Illuminate\Http\JsonResponse;
 
 class IndexController extends BaseController
 {
@@ -27,15 +26,15 @@ class IndexController extends BaseController
     //记录用户开福袋 8个触发抽奖
     public function luck()
     {
-//        $data = [
-//            'user_id' => auth()->id(),
-//            'type' => request('type'),
-//        ];
-//        UserLuck::updateOrCreate($data);
-//        //触发抽奖
-//        if(UserLuck::where('user_id',auth()->id())->count() == 8){
+        $data = [
+            'user_id' => auth()->id(),
+            'type' => request('type'),
+        ];
+        UserLuck::updateOrCreate($data);
+        //触发抽奖
+        if(UserLuck::where('user_id',auth()->id())->count() == 8){
             return show(300,'触发抽奖',['prize' => rand(1,3)]);
-//        }
-        //return show(200,'记录成功');
+        }
+        return show(200,'记录成功');
     }
 }
