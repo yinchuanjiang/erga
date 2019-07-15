@@ -26,11 +26,11 @@ if (! function_exists('show')) {
 Route::get('/auth', 'AuthController@auth')->name('login');
 Route::get('/home', 'AuthController@index')->name('home');
 Route::get('/', 'IndexController@index')->name('index');
-//Route::group(['middleware' => 'auth:web'], function () {
+Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/activity', 'IndexController@activity')->name('activity');
     Route::get('/luck', 'IndexController@luck')->name('luck');
     Route::post('/submit', 'IndexController@submit')->name('submit');
-//});
+});
 Route::get('/rule', function () {
     return view('index.rule');
 });
