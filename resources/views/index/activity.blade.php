@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
     <audio src="./images/bgmusic.mp3" id="au"></audio>
-    <img src="images/music_off.png" id="music"/>
+    <img src="./images/music_off.png" id="music"/>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
