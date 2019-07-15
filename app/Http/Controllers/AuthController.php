@@ -17,7 +17,7 @@ class AuthController extends Controller
 //        $state = '';
 //        return redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$url&response_type=code&scope=$scope&state=$state#wechat_redirect");
         $appid = config('app.wx_appid');
-        $url = route('auth.user');
+        $url = route('home');
         $scope = 'snsapi_userinfo';
         $state = '';
         return redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$url&response_type=code&scope=$scope&state=$state#wechat_redirect");
