@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 
 use App\UserLuck;
+use Illuminate\Support\Facades\Cache;
 
 class IndexController extends Controller
 {
     public function index()
     {
+        if (!Cache::has('see_num')) {
+            Cache::forever('see_num', 1);
+        }else{
+            Cache::increment('see_num',1);
+        }
         return view('index.index');
     }
 
@@ -31,11 +37,18 @@ class IndexController extends Controller
             'type' => request('type'),
         ];
         UserLuck::updateOrCreate($data);
+        if(auth()->user()->prize){
+            return show(300,'中奖了',['prize' => auth()->user()->prize]);
+        }
         if(request('type') == 8){
+            auth()->user()->prize = 3;
+            auth()->user()->save();
             return show(300,'中奖了',['prize' => 3]);
         }
         $random = rand(1,90);
         if($random % 10 == 0){
+            auth()->user()->prize = 3;
+            auth()->user()->save();
             return show(300,'中奖了',['prize' => 3]);
         }
         return show(200,'记录成功');
