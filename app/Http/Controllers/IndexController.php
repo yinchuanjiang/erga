@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\SubmitRequest;
 use App\UserLuck;
 use Illuminate\Support\Facades\Cache;
 
@@ -24,8 +25,10 @@ class IndexController extends Controller
     }
 
     //中奖用户数据收集
-    public function submit()
+    public function submit(SubmitRequest $request)
     {
+        $data = $request->all(['mobile','real_name','address']);
+        auth()->user()->update($data);
         return show(200,'提交成功');
     }
 
