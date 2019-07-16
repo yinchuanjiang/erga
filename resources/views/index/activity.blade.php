@@ -11,11 +11,11 @@
     <div class="swiper-container" style="overflow: auto;">
         <div class="swiper-wrapper" style="height: auto">
             <div class="swiper-slide">
-                @if(!auth()->user()->prize)
+                {{--@if(!auth()->user()->prize)--}}
                     <div class="first" style="background-color: black;opacity: 0.7;width: 100%;height: 100%;position: absolute;z-index: 9">
                         <img src="./images/left-right.png" alt="" style="width: 100%;">
                     </div>
-                @endif
+                {{--@endif--}}
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/40.gif" alt="" class="main">
