@@ -2,7 +2,13 @@
 @section('content')
     <audio src="./images/bgmusic.mp3" id="au"></audio>
     {{--<img src="./images/music_off.png" id="music"/>--}}
-    <div class="swiper-container" style="overflow: auto">
+	<div id="tip-box" class="container-alter" style="display:none">
+        <div class="bg">
+          <img src="./images/40.png" alt="" class="verse" >
+          <img src="./images/close.png" alt="" class="close" >
+        </div>
+    </div>
+    <div class="swiper-container" style="overflow: auto;">
         <div class="swiper-wrapper" style="height: auto">
             <div class="swiper-slide">
                 @if(!auth()->user()->prize)
@@ -13,104 +19,65 @@
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/40.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 73%;bottom:20%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="40" style="left: 73%;bottom:20%">
                     </div>
                 </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/40.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
-                </div>
+                
             </div>
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/50.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 60%;bottom:17%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="50" style="left: 60%;bottom:17%">
                     </div>
-                </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/50.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/60.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 13%;bottom:17%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="60" style="left: 13%;bottom:17%">
                     </div>
-                </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/60.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/70.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 43%;top:25%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="70" style="left: 43%;top:25%">
                     </div>
-                </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/70.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/80.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 38%;top:19%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="80" style="left: 38%;top:19%">
                     </div>
-                </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/80.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/90.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 73%;bottom:15%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="90" style="left: 73%;bottom:15%">
                     </div>
-                </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/90.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/100.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 53%;bottom:37%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="100" style="left: 53%;bottom:37%">
                     </div>
-                </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/100.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
                         <img src="./images/110.gif" alt="" class="main">
-                        <img src="./images/fudai.gif" alt="" class="luck" style="left: 53%;bottom:42%">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="110" style="left: 53%;bottom:42%">
                     </div>
-                </div>
-                <div class="container-alter" style="display: none">
-                    <div class="bg"></div>
-                    <img src="./images/110.png" alt="" class="verse" style="display: none">
-                    <img src="./images/close.png" alt="" class="close" style="display: none">
                 </div>
             </div>
         </div>
@@ -164,7 +131,7 @@
 //                $(this).parents('.swiper-slide').find('.container-alter').show();
 //            })
             $('.close').click(function () {
-                $(this).parents('.swiper-slide').find('.container-alter').hide();
+                $(this).parents().find('.container-alter').hide();
             })
             //点击大福袋填写用户信息
             $('.box .luck').click(function () {
@@ -173,10 +140,10 @@
                 axios.get('/luck?type=' + type).then(res => {
                     $.hideLoading();
                     if (res.data.status == 200) {
-                        $(that).parents('.swiper-slide').find('.container-alter').css('display', 'flex');
-                        $(that).parents('.swiper-slide').find('.bg').show();
-                        $(that).parents('.swiper-slide').find('.verse').show();
-                        $(that).parents('.swiper-slide').find('.close').show();
+                        //$(that).parents('.swiper-slide').find('.container-alter').css('display', 'flex');
+                      	var id = $(this).data("id");
+                      	$('#tip-box .verse').attr("src","./images/"+id+".png");
+                        $('#tip-box').show();
                     }else if (res.data.status == 300) {
                         $('.prize_' + res.data.data.prize).show().siblings('.prize').hide();
                         $('.prize-dialog').show();

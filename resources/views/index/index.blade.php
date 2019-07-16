@@ -27,7 +27,7 @@
                 <div class="start" style="display: none">
                     <img src="./images/zhuye.png" alt="" style="width: 100%">
                     <a href="/activity"><img src="./images/begain.png" alt="" style="width: 32%;position: absolute;top: 53%;left: 34%"></a>
-                    <div style="position: absolute;text-align: center;top:59%;width: 100%;font-size: 12px;text-decoration: underline"><a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
+                    <div style="position: absolute;text-align: center;top:59%;width: 100%;font-size: 0.8rem;text-decoration: underline"><a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
                 </div>
             </div>
         </div>
