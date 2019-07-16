@@ -203,6 +203,7 @@
             })
             $('.first').click(function () {
                 $(this).hide();
+                $('#au').play();
             })
         })
     </script>
