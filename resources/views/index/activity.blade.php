@@ -87,9 +87,9 @@
         <div class="weui-dialog weui-dialog--visible">
             <div class="weui-dialog__hd"><strong class="weui-dialog__title">请填写获奖信息</strong></div>
             <div class="weui-dialog__bd"><p class="weui-prompt-text"></p>
-                <input type="text" class="weui-input weui-prompt-input real_name" id="weui-prompt-username" value="" placeholder="输入姓名">
-                <input type="number" class="weui-input weui-prompt-input mobile" id="weui-prompt-password" value="" placeholder="输入手机号">
-                <input type="text" class="weui-input weui-prompt-input address" id="weui-prompt-password" value="" placeholder="请输入接受奖品地址">
+                <input type="text" class="weui-input weui-prompt-input real_name" id="weui-prompt-username" value="{{auth()->user()->real_name}}" placeholder="输入姓名">
+                <input type="number" class="weui-input weui-prompt-input mobile" id="weui-prompt-password" value="{{auth()->user()->mobile}}" placeholder="输入手机号">
+                <input type="text" class="weui-input weui-prompt-input address" id="weui-prompt-password" value="{{auth()->user()->address}}" placeholder="请输入接受奖品地址">
             </div>
             <div class="weui-dialog__ft">
                 <a href="javascript:;" class="weui-dialog__btn default">取消</a><a href="javascript:;" class="weui-dialog__btn primary">确定</a>
