@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\SubmitRequest;
+use App\User;
 use App\UserLuck;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
@@ -65,5 +66,18 @@ class IndexController extends Controller
             return show(300, '中奖了', ['prize' => 3]);
         }
         return show(200, '记录成功');
+    }
+
+    private function saveUser($openid, $avatar = '', $nickname = '')
+    {
+        $user = User::where('openid', $openid)->first();
+        if (!$user) {
+            $user = new User();
+            $user->openid = $openid;
+            $user->avatar = $avatar;
+            $user->nickname = $nickname;
+            $user->save();
+        }
+        Auth::guard('web')->login($user);
     }
 }
