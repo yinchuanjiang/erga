@@ -25,9 +25,9 @@
             <img src="./images/loading.gif" alt="" style="width: 100%" class="loding">
             <div class="start" style="display: none">
                 <img src="./images/zhuye.png" alt="" style="width: 100%">
-                <div style="width: 32%;position: absolute;top: 53%;left: 34%">
+                <div style="width: 36%;position: absolute;top: 53%;left: 32%">
                     <a href="javascript:void(0);" class="goto" style="margin: 0 auto;display: block;text-align: center"><img src="./images/begain.png" alt="" style="width: 100%;"></a>
-                    <div style="text-align: center;width: 100%;font-size: 12px;text-decoration: underline">
+                    <div style="text-align: center;width: 100%;font-size: 14px;text-decoration: underline">
                         <a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
             <div class="swiper-slide">
                 {{--@if(!auth()->user()->prize)--}}
                 <div class="first" style="background-color: black;opacity: 0.7;width: 100%;height: 100%;position: absolute;z-index: 9">
-                    <img src="./images/left-right.png" alt="" style="width: 100%;height: 100vh">
+                    <img src="./images/left-right.png" alt="" style="width: 100%;">
                 </div>
                 {{--@endif--}}
                 <div class="container">
