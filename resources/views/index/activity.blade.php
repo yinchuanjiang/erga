@@ -258,7 +258,7 @@
             })
             $('.first').click(function () {
                 $(this).hide();
-                $('#au').play();
+                $('#au')[0].play();
             })
         })
 
@@ -303,7 +303,7 @@
             $('.goto').click(function () {
                 $('#index').remove();
                 $('.swiper-container').show();
-                $('#au').play();
+                $('#au')[0].play();
             })
         })
     </script>
