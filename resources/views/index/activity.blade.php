@@ -34,7 +34,7 @@
         </div>
         <div style="display: none">
             <img src="./images/40.gif" alt="" class="cover">
-            <img src="./images/50.gif" alt="" class="cover">
+            <img src="./images/50.gif?v=1" alt="" class="cover">
             <img src="./images/60.gif" alt="" class="cover">
             <img src="./images/70.gif" alt="" class="cover">
             <img src="./images/80.gif" alt="" class="cover">
@@ -80,7 +80,7 @@
             <div class="swiper-slide">
                 <div class="container">
                     <div class="box" style="position: relative">
-                        <img src="./images/50.gif" alt="" class="main">
+                        <img src="./images/50.gif?v=1" alt="" class="main">
                         <img src="./images/fudai.gif" alt="" class="luck" data-id="50" style="left: 60%;bottom:17%">
                     </div>
                 </div>
