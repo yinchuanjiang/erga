@@ -52,6 +52,9 @@
     </script>
 </head>
 <body>
+    <p style="display: none;">
+        <img src="./images/share.png" style="position: absolute; visibility: hidden" alt="">
+    </p>
     @yield("content")
 </body>
 <!-- body 最后 -->

@@ -51,6 +51,9 @@ class IndexController extends Controller
             'type' => request('type'),
         ];
         UserLuck::updateOrCreate($data);
+        if(request('type') < 5){
+            return show(200, '记录成功');
+        }
         if (auth()->user()->prize) {
             return show(300, '中奖了', ['prize' => auth()->user()->prize]);
         }
