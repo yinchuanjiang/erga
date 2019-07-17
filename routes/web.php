@@ -26,8 +26,7 @@ if (! function_exists('show')) {
 //Route::get('/auth', 'AuthController@auth')->name('login');
 Route::get('/home', 'AuthController@authUser')->name('login');
 Route::group(['middleware' => 'auth:web'], function () {
-    Route::get('/', 'IndexController@index')->name('index');
-    Route::get('/activity', 'IndexController@activity')->name('activity');
+    Route::get('/', 'IndexController@activity')->name('index');
     Route::get('/luck', 'IndexController@luck')->name('luck');
     Route::get('/prize', 'IndexController@prize')->name('prize');
     Route::post('/submit', 'IndexController@submit')->name('submit');

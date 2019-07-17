@@ -1,7 +1,12 @@
 @extends('layout.main')
 @section('content')
     <style>
-       #index .container {
+        #index {
+            width: 100%;
+            height: 100%;
+        }
+
+        #index .container {
             width: 100%;
             height: 100%;
             position: relative;
@@ -9,23 +14,24 @@
             display: flex !important;
             justify-content: center;
             align-items: center;
-            flex-direction:column;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+        #activity {
+            width: 100%;
+            height: 100%;
         }
     </style>
     <div id="index">
-        <div class="swiper-container" style="overflow:auto;">
-            <div class="swiper-wrapper" style="height: auto">
-                <div class="swiper-slide">
-                    <div class="container">
-                        <img src="./images/loading.gif" alt="" style="width: 100%" class="loding">
-                        <div class="start" style="display: none">
-                            <img src="./images/zhuye.png" alt="" style="width: 100%">
-                            <div style="width: 32%;position: absolute;top: 53%;left: 34%">
-                                <a href="javscript:;" class="goto" style="margin: 0 auto;display: block;text-align: center"><img src="./images/begain.png" alt="" style="width: 100%;"></a>
-                                <div style="text-align: center;width: 100%;font-size: 12px;text-decoration: underline"><a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="container">
+            <img src="./images/loading.gif" alt="" style="width: 100%" class="loding">
+            <div class="start" style="display: none">
+                <img src="./images/zhuye.png" alt="" style="width: 100%">
+                <div style="width: 32%;position: absolute;top: 53%;left: 34%">
+                    <a href="javscript:;" class="goto" style="margin: 0 auto;display: block;text-align: center"><img src="./images/begain.png" alt="" style="width: 100%;"></a>
+                    <div style="text-align: center;width: 100%;font-size: 12px;text-decoration: underline">
+                        <a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
                 </div>
             </div>
         </div>
@@ -49,136 +55,135 @@
             <img src="./images/fudai.gif" alt="" class="cover">
             <img src="./images/close.png" alt="" class="cover">
             <img src="./images/music_off.png" alt="" class="cover">
-            <audio src="./images/bgmusic.mp3"></audio>
         </div>
     </div>
-    <div id="activity" style="display: none">
-        <audio src="./images/bgmusic.mp3" id="au"></audio>
-        {{--<img src="./images/music_off.png" id="music"/>--}}
-        <div id="tip-box" class="container-alter" style="display:none">
-            <div class="bg">
-                <img src="./images/40.png" alt="" class="verse" >
-                <img src="./images/close.png" alt="" class="close" >
-            </div>
+    <audio src="./images/bgmusic.mp3" autoplay id="au"></audio>
+    {{--<img src="./images/music_off.png" id="music"/>--}}
+    <div id="tip-box" class="container-alter" style="display:none">
+        <div class="bg">
+            <img src="./images/40.png" alt="" class="verse">
+            <img src="./images/close.png" alt="" class="close">
         </div>
-        <div class="swiper-container" style="overflow: auto;">
-            <div class="swiper-wrapper" style="height: auto">
-                <div class="swiper-slide">
-                    {{--@if(!auth()->user()->prize)--}}
-                    <div class="first" style="background-color: black;opacity: 0.7;width: 100%;height: 100%;position: absolute;z-index: 9">
-                        <img src="./images/left-right.png" alt="" style="width: 100%;height: 100vh">
+    </div>
+    <div class="swiper-container" style="display: none">
+        <div class="swiper-wrapper" style="">
+            <div class="swiper-slide">
+                {{--@if(!auth()->user()->prize)--}}
+                <div class="first" style="background-color: black;opacity: 0.7;width: 100%;height: 100%;position: absolute;z-index: 9">
+                    <img src="./images/left-right.png" alt="" style="width: 100%;height: 100vh">
+                </div>
+                {{--@endif--}}
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/40.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="40" style="left: 73%;bottom:20%">
                     </div>
-                    {{--@endif--}}
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/40.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="40" style="left: 73%;bottom:20%">
-                        </div>
-                    </div>
+                </div>
 
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/50.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="50" style="left: 60%;bottom:17%">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/60.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="60" style="left: 13%;bottom:17%">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/70.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="70" style="left: 43%;top:25%">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/80.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="80" style="left: 38%;top:19%">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/90.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="90" style="left: 73%;bottom:15%">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/100.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="100" style="left: 53%;bottom:37%">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="box" style="position: relative">
-                            <img src="./images/110.gif" alt="" class="main">
-                            <img src="./images/fudai.gif" alt="" class="luck" data-id="110" style="left: 53%;bottom:42%">
-                        </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/50.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="50" style="left: 60%;bottom:17%">
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="info-dialog" style="display: none">
-            <div class="weui-mask weui-mask--visible"></div>
-            <div class="weui-dialog weui-dialog--visible">
-                <div class="weui-dialog__hd"><strong class="weui-dialog__title">请填写获奖信息</strong></div>
-                <div class="weui-dialog__bd"><p class="weui-prompt-text"></p>
-                    <input type="text" class="weui-input weui-prompt-input real_name" id="weui-prompt-username" value="{{auth()->user()->real_name}}" placeholder="输入姓名">
-                    <input type="number" class="weui-input weui-prompt-input mobile" id="weui-prompt-password" value="{{auth()->user()->mobile}}" placeholder="输入手机号">
-                    <input type="text" class="weui-input weui-prompt-input address" id="weui-prompt-password" value="{{auth()->user()->address}}" placeholder="请输入接受奖品地址">
-                </div>
-                <div class="weui-dialog__ft">
-                    <a href="javascript:;" class="weui-dialog__btn default">取消</a><a href="javascript:;" class="weui-dialog__btn primary">确定</a>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/60.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="60" style="left: 13%;bottom:17%">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="prize-dialog" style="display: none">
-            <div class="weui-mask weui-mask--visible prize-div">
-                <img src="./images/prize_1.png" alt="" class="prize_1 prize" style="width: 50%;display: none">
-                <img src="./images/prize_2.png" alt="" class="prize_2 prize" style="width: 50%;display: none">
-                <img src="./images/prize_3.png" alt="" class="prize_3 prize" style="width: 50%;display: none">
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/70.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="70" style="left: 43%;top:25%">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/80.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="80" style="left: 38%;top:19%">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/90.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="90" style="left: 73%;bottom:15%">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/100.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="100" style="left: 53%;bottom:37%">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="box" style="position: relative">
+                        <img src="./images/110.gif" alt="" class="main">
+                        <img src="./images/fudai.gif" alt="" class="luck" data-id="110" style="left: 53%;bottom:42%">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
+    <div class="info-dialog" style="display: none">
+        <div class="weui-mask weui-mask--visible"></div>
+        <div class="weui-dialog weui-dialog--visible">
+            <div class="weui-dialog__hd"><strong class="weui-dialog__title">请填写获奖信息</strong></div>
+            <div class="weui-dialog__bd"><p class="weui-prompt-text"></p>
+                <input type="text" class="weui-input weui-prompt-input real_name" id="weui-prompt-username" value="{{auth()->user()->real_name}}" placeholder="输入姓名">
+                <input type="number" class="weui-input weui-prompt-input mobile" id="weui-prompt-password" value="{{auth()->user()->mobile}}" placeholder="输入手机号">
+                <input type="text" class="weui-input weui-prompt-input address" id="weui-prompt-password" value="{{auth()->user()->address}}" placeholder="请输入接受奖品地址">
+            </div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn default">取消</a><a href="javascript:;" class="weui-dialog__btn primary">确定</a>
+            </div>
+        </div>
+    </div>
+    <div class="prize-dialog" style="display: none">
+        <div class="weui-mask weui-mask--visible prize-div">
+            <img src="./images/prize_1.png" alt="" class="prize_1 prize" style="width: 50%;display: none">
+            <img src="./images/prize_2.png" alt="" class="prize_2 prize" style="width: 50%;display: none">
+            <img src="./images/prize_3.png" alt="" class="prize_3 prize" style="width: 50%;display: none">
+        </div>
+    </div>
     <script src="./js/swiper.min.js"></script>
     <script src="./js/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/wei.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            paginationClickable: true,
-            onInit: function (swiper) { //Swiper2.x的初始化是onFirstInit
-                swiperAnimateCache(swiper); //隐藏动画元素
-                swiperAnimate(swiper); //初始化完成开始动画
-            },
-            onSlideChangeEnd: function (swiper) {
-                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-                $('.container-alter').hide();
+        $(function () {
+            var swiper = new Swiper('.swiper-container', {
+                paginationClickable: true,
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
+                onInit: function (swiper) { //Swiper2.x的初始化是onFirstInit
+                    swiperAnimateCache(swiper); //隐藏动画元素
+                    swiperAnimate(swiper); //初始化完成开始动画
+                },
+                onSlideChangeEnd: function (swiper) {
+                    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+                    $('.container-alter').hide();
 //		    if (swiper.activeIndex==0) {
 //		    	$(".import").css('left','70%');
 //		    }else{
 //		    	$(".import").css('left','0%');
 //		    }
-            }
-        });
-        $(function () {
+                }
+            });
+
             $("#loading").fadeOut(1000)
             $('.swiper-wrapper').fadeIn(1000)
 //            $('.luck').click(function () {
@@ -195,10 +200,10 @@
                     $.hideLoading();
                     if (res.data.status == 200) {
                         //$(that).parents('.swiper-slide').find('.container-alter').css('display', 'flex');
-                      	var id = $(this).data("id");
-                      	$('#tip-box .verse').attr("src","./images/"+id+".png");
+                        var id = $(this).data("id");
+                        $('#tip-box .verse').attr("src", "./images/" + id + ".png");
                         $('#tip-box').show();
-                    }else if (res.data.status == 300) {
+                    } else if (res.data.status == 300) {
                         $('.prize_' + res.data.data.prize).show().siblings('.prize').hide();
                         $('.prize-dialog').show();
                     }
@@ -257,7 +262,7 @@
             })
             $('.first').click(function () {
                 $(this).hide();
-                $('#au').play();
+                //$('#au').play();
             })
         })
 
@@ -270,8 +275,8 @@
 
             // 判断图片加载状况，加载完成后回调
             isImgLoad(function () {
-                $('.start').fadeIn(500)
-                $(".loding").fadeOut(500)
+                $('.start').show()
+                $(".loding").hide()
             });
 
             // 判断图片加载的函数
@@ -298,9 +303,10 @@
                     }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
                 }
             }
+
             $('.goto').click(function () {
-                $('#index').hide();
-                $('#activity').show();
+                $('#index').remove();
+                $('.swiper-container').show();
             })
         })
     </script>
