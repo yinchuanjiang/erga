@@ -7,6 +7,7 @@ use App\Http\Requests\SubmitRequest;
 use App\UserLuck;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 
 class IndexController extends Controller
 {
