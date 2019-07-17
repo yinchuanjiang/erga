@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>张二嘎</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="张二嘎">
+    <meta property="og:image" content="{{config('app.url')}}images/share.png">
+    <meta property="og:url" content="{{config('app.url')}}">
+
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="css/erga.css"/>
     <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
