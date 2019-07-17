@@ -26,7 +26,7 @@
             <div class="start" style="display: none">
                 <img src="./images/zhuye.png" alt="" style="width: 100%">
                 <div style="width: 32%;position: absolute;top: 53%;left: 34%">
-                    <a href="javscript:;" class="goto" style="margin: 0 auto;display: block;text-align: center"><img src="./images/begain.png" alt="" style="width: 100%;"></a>
+                    <a href="javascript:void(0);" class="goto" style="margin: 0 auto;display: block;text-align: center"><img src="./images/begain.png" alt="" style="width: 100%;"></a>
                     <div style="text-align: center;width: 100%;font-size: 12px;text-decoration: underline">
                         <a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
                 </div>
