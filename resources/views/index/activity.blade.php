@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('content')
-    <audio src="./images/bgmusic.mp3" autoplay id="au"></audio>
+    <audio src="./images/bgmusic.mp3" autoplay loop id="au"></audio>
     <style>
         #index {
             width: 100%;
