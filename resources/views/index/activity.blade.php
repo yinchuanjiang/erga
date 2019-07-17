@@ -98,9 +98,9 @@
     </div>
     <div class="prize-dialog" style="display: none">
         <div class="weui-mask weui-mask--visible prize-div">
-            <img src="./images/prize_1.png" alt="" class="prize_1 prize" style="width: 70%;display: none">
-            <img src="./images/prize_2.png" alt="" class="prize_2 prize" style="width: 70%;display: none">
-            <img src="./images/prize_3.png" alt="" class="prize_3 prize" style="width: 70%;display: none">
+            <img src="./images/prize_1.png" alt="" class="prize_1 prize" style="width: 50%;display: none">
+            <img src="./images/prize_2.png" alt="" class="prize_2 prize" style="width: 50%;display: none">
+            <img src="./images/prize_3.png" alt="" class="prize_3 prize" style="width: 50%;display: none">
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>

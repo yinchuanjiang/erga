@@ -26,8 +26,10 @@
                 <img src="./images/loading.gif" alt="" style="width: 100%" class="loding">
                 <div class="start" style="display: none">
                     <img src="./images/zhuye.png" alt="" style="width: 100%">
-                    <a href="/activity"><img src="./images/begain.png" alt="" style="width: 32%;position: absolute;top: 53%;left: 34%"></a>
-                    <div style="position: absolute;text-align: center;top:59%;width: 100%;font-size: 0.8rem;text-decoration: underline"><a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
+                    <div style="width: 32%;position: absolute;top: 53%;left: 34%">
+                        <a href="/activity" style="margin: 0 auto;display: block;text-align: center"><img src="./images/begain.png" alt="" style="width:11rem;"></a>
+                        <div style="text-align: center;width: 100%;font-size: 0.5rem;text-decoration: underline"><a href="/rule" style="color: #EFB0B0;">规则说明</a></div>
+                    </div>
                 </div>
             </div>
         </div>
