@@ -1,5 +1,6 @@
 @extends('layout.main')
 @section('content')
+    <audio src="./images/bgmusic.mp3" autoplay id="au"></audio>
     <style>
         #index {
             width: 100%;
@@ -18,10 +19,6 @@
             overflow: auto;
         }
 
-        #activity {
-            width: 100%;
-            height: 100%;
-        }
     </style>
     <div id="index">
         <div class="container">
@@ -57,7 +54,6 @@
             <img src="./images/music_off.png" alt="" class="cover">
         </div>
     </div>
-    <audio src="./images/bgmusic.mp3" autoplay id="au"></audio>
     {{--<img src="./images/music_off.png" id="music"/>--}}
     <div id="tip-box" class="container-alter" style="display:none">
         <div class="bg">
@@ -262,7 +258,7 @@
             })
             $('.first').click(function () {
                 $(this).hide();
-                //$('#au').play();
+                $('#au').play();
             })
         })
 
@@ -307,6 +303,7 @@
             $('.goto').click(function () {
                 $('#index').remove();
                 $('.swiper-container').show();
+                $('#au').play();
             })
         })
     </script>
