@@ -36,41 +36,6 @@ class IndexController extends Controller
     }
 
     //中奖用户数据收集
-    public function submit(SubmitRequest $request)
-    {
-        $data = $request->all(['mobile', 'real_name', 'address']);
-        auth()->user()->update($data);
-        return show(200, '提交成功');
-    }
-
-    //记录用户开福袋 8个触发抽奖
-    public function luck()
-    {
-        $data = [
-            'user_id' => auth()->id(),
-            'type' => request('type'),
-        ];
-        UserLuck::updateOrCreate($data);
-        if(request('type') < 5){
-            return show(200, '记录成功');
-        }
-        if (auth()->user()->prize) {
-            return show(300, '中奖了', ['prize' => auth()->user()->prize]);
-        }
-        $prize = 3;
-        if (request('type') == 8) {
-            auth()->user()->prize = $prize;
-            auth()->user()->save();
-            return show(300, '中奖了', ['prize' => $prize]);
-        }
-        $random = rand(1, 90);
-        if ($random % 10 == 0) {
-            auth()->user()->prize = $prize;
-            auth()->user()->save();
-            return show(300, '中奖了', ['prize' => $prize]);
-        }
-        return show(200, '记录成功');
-    }
 
     private function saveUser($openid, $avatar = '', $nickname = '')
     {
@@ -85,24 +50,64 @@ class IndexController extends Controller
         Auth::guard('web')->login($user);
     }
 
+    //记录用户开福袋 8个触发抽奖
+
+    public function submit(SubmitRequest $request)
+    {
+        $data = $request->all(['mobile', 'real_name', 'address']);
+        auth()->user()->update($data);
+        return show(200, '提交成功');
+    }
+
+    public function luck()
+    {
+        $data = [
+            'user_id' => auth()->id(),
+            'type' => request('type'),
+        ];
+        UserLuck::updateOrCreate($data);
+        if (request('type') < 5) {
+            return show(200, '记录成功');
+        }
+        if (auth()->user()->prize) {
+            return show(300, '中奖了', ['prize' => auth()->user()->prize]);
+        }
+        $prize = $this->getPrize();
+        if (request('type') == 8) {
+            auth()->user()->prize = $prize;
+            auth()->user()->save();
+            return show(300, '中奖了', ['prize' => $prize]);
+        }
+        $random = rand(1, 90);
+        if ($random % 10 == 0) {
+            auth()->user()->prize = $prize;
+            auth()->user()->save();
+            return show(300, '中奖了', ['prize' => $prize]);
+        }
+        return show(200, '记录成功');
+    }
+
     public function getPrize()
     {
-//        $total = User::count();
-        $total = rand(1,4000000);
-        $first = User::where('prize',1)->count();
-        $second = User::where('prize',2)->count();
+        $total = User::count();
+        $first = User::where('prize', 1)->count();
+        $second = User::where('prize', 2)->count();
         $prize = $this->draw($total, $first, 200000);
-        if(!$prize) {
-            $prize = $this->draw($total, $second, 10000);
-        }else{
+        if (!$prize) {
+            $prize = $this->draw($total, $second, 1000);
+            if (!$prize) {
+                $prize = 3;
+            } else {
+                $prize = 2;
+            }
+        } else {
             $prize = 1;
         }
-        if(!$prize) {
+        if($first >= 10 && $prize == 1)
             $prize = 3;
-        }else{
-            $prize = 2;
-        }
-        dd(compact('prize','total'));
+        if($second >= 2000 && $prize == 2)
+            $prize = 3;
+        return $prize;
     }
 
     /**
@@ -112,9 +117,8 @@ class IndexController extends Controller
      */
     private function draw($total, $first, $base)
     {
-        $first = $first + 1;
+        $first = $first ? $first : 1;
         $chance = $total > $first * $base ? $total % ($first * $base) : 0;
-        dump(compact('chance'));
         $draw = rand(1, $base);
         if ($draw < $chance)
             return true;
