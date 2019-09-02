@@ -88,11 +88,9 @@ class IndexController extends Controller
     public function getPrize()
     {
 //        $total = User::count();
-//        $first = User::where('prize',1)->count();
-//        $second = User::where('prize',2)->count();
-        $total = 150000;
-        $first = 0;
-        $second = 0;
+        $total = rand(1,4000000);
+        $first = User::where('prize',1)->count();
+        $second = User::where('prize',2)->count();
         $prize = $this->draw($total, $first, 200000);
         if(!$prize) {
             $prize = $this->draw($total, $second, 10000);
