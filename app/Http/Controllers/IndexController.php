@@ -112,6 +112,7 @@ class IndexController extends Controller
      */
     private function draw($total, $first, $base)
     {
+        $first = $first + 1;
         $chance = $total > $first * $base ? $total % ($first * $base) : 0;
         $draw = rand(1, $base);
         if ($draw < $chance)
