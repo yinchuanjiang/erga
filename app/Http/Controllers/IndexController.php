@@ -114,6 +114,7 @@ class IndexController extends Controller
     {
         $first = $first + 1;
         $chance = $total > $first * $base ? $total % ($first * $base) : 0;
+        dump(compact('chance'));
         $draw = rand(1, $base);
         if ($draw < $chance)
             return true;
