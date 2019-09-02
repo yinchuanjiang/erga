@@ -57,16 +57,17 @@ class IndexController extends Controller
         if (auth()->user()->prize) {
             return show(300, '中奖了', ['prize' => auth()->user()->prize]);
         }
+        $prize = 3;
         if (request('type') == 8) {
-            auth()->user()->prize = 3;
+            auth()->user()->prize = $prize;
             auth()->user()->save();
-            return show(300, '中奖了', ['prize' => 3]);
+            return show(300, '中奖了', ['prize' => $prize]);
         }
         $random = rand(1, 90);
         if ($random % 10 == 0) {
-            auth()->user()->prize = 3;
+            auth()->user()->prize = $prize;
             auth()->user()->save();
-            return show(300, '中奖了', ['prize' => 3]);
+            return show(300, '中奖了', ['prize' => $prize]);
         }
         return show(200, '记录成功');
     }
