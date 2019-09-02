@@ -84,4 +84,40 @@ class IndexController extends Controller
         }
         Auth::guard('web')->login($user);
     }
+
+    public function getPrize()
+    {
+//        $total = User::count();
+//        $first = User::where('prize',1)->count();
+//        $second = User::where('prize',2)->count();
+        $total = 150000;
+        $first = 0;
+        $second = 0;
+        $prize = $this->draw($total, $first, 200000);
+        if(!$prize) {
+            $prize = $this->draw($total, $second, 10000);
+        }else{
+            $prize = 1;
+        }
+        if(!$prize) {
+            $prize = 3;
+        }else{
+            $prize = 2;
+        }
+        dd($prize);
+    }
+
+    /**
+     * @param $total
+     * @param $first
+     * @param $base
+     */
+    private function draw($total, $first, $base)
+    {
+        $chance = $total > $first * $base ? $total % ($first * $base) : 0;
+        $draw = rand(1, $base);
+        if ($draw < $chance)
+            return true;
+        return false;
+    }
 }
