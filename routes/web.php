@@ -34,3 +34,5 @@ Route::group(['middleware' => 'auth:web'], function () {
 Route::get('/rule', function () {
     return view('index.rule');
 });
+
+Route::get('/test', 'IndexController@getPrize')->name('test');

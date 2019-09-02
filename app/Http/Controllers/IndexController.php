@@ -102,7 +102,7 @@ class IndexController extends Controller
         }else{
             $prize = 2;
         }
-        dd($prize);
+        dd(compact('prize','total'));
     }
 
     /**
