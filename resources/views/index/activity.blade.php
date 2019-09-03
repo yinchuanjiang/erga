@@ -218,7 +218,7 @@
             })
             //三等奖
             $('.prize_3').click(function () {
-                window.location.href = 'https://coupon.m.jd.com/coupons/show.action?key=3c7fb50feb45415e88597ef15941a1ca&roleId=20572156&to=zhangerga.jd.com';
+                window.location.href = 'http://coupon.m.jd.com/coupons/show.action?key=5f3f923f4c284acc88f0101d1822d70c&roleId=22735227&to=zhangerga.jd.com';
             })
             //信息取消提交
             $('.default').click(function () {
