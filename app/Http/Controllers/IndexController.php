@@ -92,7 +92,7 @@ class IndexController extends Controller
         $total = User::count();
         $first = User::where('prize', 1)->count();
         $second = User::where('prize', 2)->count();
-        $prize = $this->draw($total, $first, 200000);
+        $prize = $this->draw($total, $first, 2000000);
         if (!$prize) {
             $prize = $this->draw($total, $second, 1000);
             if (!$prize) {
