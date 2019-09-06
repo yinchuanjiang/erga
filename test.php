@@ -6,29 +6,29 @@
  * Time: 下午4:28
  */
 while (true) {
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    file_get_contents('http://erga.test/test');
-    sleep(1);
+    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+//    file_get_contents('http://erga.iyker.com');
+    sleep(10);
 }
